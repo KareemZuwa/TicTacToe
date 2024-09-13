@@ -1,7 +1,44 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=PT+Mono&display=swap");
+
+:root {
+  --dark-green: #38474c;
+  --pastell-yellow: #f8c06d;
+  --creme-white: #fef9f1;
+  --danger-orange: #ff4c01;
+}
+
+body,
+app-root {
   font-family: "PT Mono", sans-serif;
-  /* margin: 0 auto;
-  display: flex;
-  justify-content: center; */
-  background-color: #0e7d77;
+  background-color: black;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--creme-white);
+}
+
+h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--creme-white);
+}
+
+h3 {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--dark-green);
+}
+
+p {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 200;
+  letter-spacing: 1px;
+  color: var(--creme-white);
 }

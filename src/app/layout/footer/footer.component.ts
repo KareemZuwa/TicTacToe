@@ -6,4 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: 'footer.component.html',
   styleUrl: './footer.component.css',
 })
-export class AppFooter {}
+export class AppFooter {
+  copyWriteTitle = 'Copyright ©2024 Kazu';
+}
