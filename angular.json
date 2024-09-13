@@ -24,10 +24,7 @@
                 "input": "public"
               }
             ],
-            "styles": [
-              "src/styles.css",
-              "https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
-            ],
+            "styles": ["src/styles.css"],
             "scripts": [],
             "server": "src/main.server.ts",
             "prerender": true,
