@@ -1,7 +1,7 @@
 section {
   background: var(--pastell-yellow);
   padding: 2rem 1rem;
-  border-radius: 15px;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   place-items: center;
@@ -12,6 +12,6 @@ section {
     rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
 }
 
-.player-content {
+.player-icon-container {
   width: 2rem;
 }

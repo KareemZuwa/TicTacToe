@@ -2,7 +2,7 @@
   <div class="player-title">
     <h2>{{ player }}</h2>
   </div>
-<div class="player-content" *ngIf="icon === 'circle' || icon === 'close'">
+<div class="player-icon-container" *ngIf="icon === 'circle' || icon === 'close'">
   <app-circle-icon *ngIf="icon === 'circle'"></app-circle-icon>
   <app-close-icon *ngIf="icon === 'close'"></app-close-icon>
 </div>
