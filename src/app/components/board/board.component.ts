@@ -111,7 +111,9 @@ export class AppBoard {
       ['', '', ''],
       ['', '', ''],
     ];
-    this.currentPlayer = 'X';
+    this.currentPlayer = 'O';
+    this.winner = null;
+    this.isDraw = false;
     console.log('Board has been reset');
     console.table(this.board);
   }
