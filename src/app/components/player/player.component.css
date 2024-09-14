@@ -1,0 +1,12 @@
+section {
+    background: var(--pastell-yellow);
+    padding: 2rem;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+}
+
+.player-content {
+    width: 3rem;
+}

@@ -1,0 +1,12 @@
+.table-row {
+    display:flex;
+    gap: .5rem;
+    margin-bottom: .5rem;
+}
+
+.table-row > * {
+    background: var(--dark-green);
+    width:128px;
+    height:128px;
+    border-radius: 15px;
+}
