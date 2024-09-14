@@ -1,10 +1,11 @@
+import { Component, Input } from '@angular/core';
+import { AppButton } from '../button/button.component';
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-board',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, AppButton],
   templateUrl: './board.component.html',
   styleUrl: './board.component.css',
 })
@@ -26,6 +27,17 @@ export class AppBoard {
 
       this.currentPlayer = this.currentPlayer === 'X' ? 'O' : 'X';
     }
+    console.table(this.board);
+  }
+
+  resetBoard(): void {
+    this.board = [
+      ['', '', ''],
+      ['', '', ''],
+      ['', '', ''],
+    ];
+    this.currentPlayer = 'X';
+    console.log('Board has been reset');
     console.table(this.board);
   }
 }

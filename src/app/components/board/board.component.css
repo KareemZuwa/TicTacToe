@@ -9,3 +9,6 @@ td {
   cursor: pointer;
 }
 
+.button-container {
+  margin-top: 4rem;
+}
