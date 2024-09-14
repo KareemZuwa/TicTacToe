@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { AppButton } from '../button/button.component';
 import { CommonModule } from '@angular/common';
 

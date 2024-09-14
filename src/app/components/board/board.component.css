@@ -9,6 +9,14 @@ td {
   cursor: pointer;
 }
 
+td.player-x {
+  background-color: var(--pastell-yellow);
+}
+
+td.player-o {
+  background-color: var( --danger-orange);
+}
+
 .button-container {
   margin-top: 4rem;
 }
