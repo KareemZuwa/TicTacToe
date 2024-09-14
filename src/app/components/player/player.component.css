@@ -1,12 +1,17 @@
 section {
-    background: var(--pastell-yellow);
-    padding: 2rem;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    place-items: center;
+  background: var(--pastell-yellow);
+  padding: 2rem 1rem;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+
+.current {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
 }
 
 .player-content {
-    width: 3rem;
+  width: 2rem;
 }

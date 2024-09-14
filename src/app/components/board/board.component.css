@@ -1,20 +1,21 @@
 td {
-  background: var(--light-green);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  background: var(--pastell-green);
   width: 96px;
   height: 96px;
-  border: 4px solid var(--creme-white);
+  /* border: 4px solid var(--creme-white); */
   border-radius: 15px;
   text-align: center;
   font-size: 2em;
   cursor: pointer;
 }
 
-td.player-x {
+td.player-o {
   background-color: var(--pastell-yellow);
 }
 
-td.player-o {
-  background-color: var( --danger-orange);
+td.player-x {
+  background-color: var(--danger-orange);
 }
 
 .button-container {
