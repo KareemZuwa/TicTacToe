@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { AppButton } from '../button/button.component';
 import { CommonModule } from '@angular/common';
 import { GameService } from '../../services/game.service';
+import { AppModal } from '../modal/modal.component';
 
 @Component({
   selector: 'app-board',
   standalone: true,
-  imports: [CommonModule, AppButton],
+  imports: [CommonModule, AppButton, AppModal],
   templateUrl: './board.component.html',
   styleUrl: './board.component.css',
 })

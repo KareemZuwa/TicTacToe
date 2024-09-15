@@ -101,22 +101,9 @@
   <div class="button-container">
     <button type="button" (click)="resetBoard()">Reset Game</button>
   </div>
-
-  <div
-    *ngIf="gameService.winner || gameService.isDraw"
-    class="modal-overlay"
-    (click)="resetBoard()"
-  >
-    <div class="modal-content" (click)="$event.stopPropagation()">
-      <h1 *ngIf="gameService.winner">
-        Game Over!
-        <h3>Player {{ gameService.winner }} wins!</h3>
-      </h1>
-      <h1 *ngIf="gameService.isDraw && !gameService.winner">
-        Game Over!
-        <h3>It's a draw!</h3>
-      </h1>
-      <button class="reset-button" (click)="resetBoard()">New Game</button>
-    </div>
-  </div>
+  <app-modal
+    [winner]="gameService.winner"
+    [isDraw]="gameService.isDraw"
+    (resetGame)="resetBoard()"
+  ></app-modal>
 </section>

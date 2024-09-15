@@ -1,0 +1,13 @@
+<div *ngIf="winner || isDraw" class="modal-overlay" (click)="onReset()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <h1 *ngIf="winner">
+      Game Over!
+      <h3>Player {{ winner }} wins!</h3>
+    </h1>
+    <h1 *ngIf="isDraw && !winner">
+      Game Over!
+      <h3>It's a draw!</h3>
+    </h1>
+    <button class="reset-button" (click)="onReset()">New Game</button>
+  </div>
+</div>
