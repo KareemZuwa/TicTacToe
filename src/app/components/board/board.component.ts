@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AppButton } from '../button/button.component';
 import { CommonModule } from '@angular/common';
+import { GameService } from '../../services/game.service';
 
 @Component({
   selector: 'app-board',
@@ -10,112 +11,29 @@ import { CommonModule } from '@angular/common';
   styleUrl: './board.component.css',
 })
 export class AppBoard {
-  board: string[][] = [
-    ['', '', ''],
-    ['', '', ''],
-    ['', '', ''],
-  ];
-
-  currentPlayer: string = 'O';
-  winner: string | null = null;
-  isDraw: boolean = false;
+  constructor(public gameService: GameService) {}
 
   handleClick(row: number, col: number): void {
-    if (this.board[row][col] === '' && !this.winner) {
-      this.board[row][col] = this.currentPlayer;
+    if (this.gameService.board[row][col] === '' && !this.gameService.winner) {
+      this.gameService.board[row][col] = this.gameService.currentPlayer;
       console.log(
-        `Player ${this.currentPlayer} clicked on cell [${row}, ${col}]`
+        `Player ${this.gameService.currentPlayer} clicked on cell [${row}, ${col}]`
       );
 
-      if (this.checkWinner()) {
-        console.log(`Player ${this.winner} wins!`);
-      } else if (this.checkDraw()) {
-        this.isDraw = true;
+      if (this.gameService.checkWinner()) {
+        console.log(`Player ${this.gameService.winner} wins!`);
+      } else if (this.gameService.checkDraw()) {
+        this.gameService.isDraw = true;
         console.log('The game is a draw!');
       } else {
-        this.currentPlayer = this.currentPlayer === 'X' ? 'O' : 'X';
+        this.gameService.currentPlayer =
+          this.gameService.currentPlayer === 'X' ? 'O' : 'X';
       }
     }
-    console.table(this.board);
-  }
-
-  checkWinner(): boolean {
-    const winningCombinations = [
-      // Check Rows
-      [
-        [0, 0],
-        [0, 1],
-        [0, 2],
-      ],
-      [
-        [1, 0],
-        [1, 1],
-        [1, 2],
-      ],
-      [
-        [2, 0],
-        [2, 1],
-        [2, 2],
-      ],
-      // Check Columns
-      [
-        [0, 0],
-        [1, 0],
-        [2, 0],
-      ],
-      [
-        [0, 1],
-        [1, 1],
-        [2, 1],
-      ],
-      [
-        [0, 2],
-        [1, 2],
-        [2, 2],
-      ],
-      // Check Diagonals
-      [
-        [0, 0],
-        [1, 1],
-        [2, 2],
-      ],
-      [
-        [0, 2],
-        [1, 1],
-        [2, 0],
-      ],
-    ];
-
-    for (const combo of winningCombinations) {
-      const [a, b, c] = combo;
-
-      if (
-        this.board[a[0]][a[1]] === this.currentPlayer &&
-        this.board[b[0]][b[1]] === this.currentPlayer &&
-        this.board[c[0]][c[1]] === this.currentPlayer
-      ) {
-        this.winner = this.currentPlayer;
-        return true;
-      }
-    }
-
-    return false;
-  }
-
-  checkDraw(): boolean {
-    return this.board.every((row) => row.every((cell) => cell !== ''));
+    console.table(this.gameService.board);
   }
 
   resetBoard(): void {
-    this.board = [
-      ['', '', ''],
-      ['', '', ''],
-      ['', '', ''],
-    ];
-    this.currentPlayer = 'O';
-    this.winner = null;
-    this.isDraw = false;
-    console.log('Board has been reset');
-    console.table(this.board);
+    this.gameService.resetBoard();
   }
 }

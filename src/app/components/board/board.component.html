@@ -5,31 +5,31 @@
         <td
           (click)="handleClick(0, 0)"
           [ngClass]="{
-            'player-x': board[0][0] === 'X',
-            'player-o': board[0][0] === 'O'
+            'player-x': gameService.board[0][0] === 'X',
+            'player-o': gameService.board[0][0] === 'O'
           }"
         >
-          {{ board[0][0] }}
+          {{ gameService.board[0][0] }}
         </td>
 
         <td
           (click)="handleClick(0, 1)"
           [ngClass]="{
-            'player-x': board[0][1] === 'X',
-            'player-o': board[0][1] === 'O'
+            'player-x': gameService.board[0][1] === 'X',
+            'player-o': gameService.board[0][1] === 'O'
           }"
         >
-          {{ board[0][1] }}
+          {{ gameService.board[0][1] }}
         </td>
 
         <td
           (click)="handleClick(0, 2)"
           [ngClass]="{
-            'player-x': board[0][2] === 'X',
-            'player-o': board[0][2] === 'O'
+            'player-x': gameService.board[0][2] === 'X',
+            'player-o': gameService.board[0][2] === 'O'
           }"
         >
-          {{ board[0][2] }}
+          {{ gameService.board[0][2] }}
         </td>
       </tr>
 
@@ -37,31 +37,31 @@
         <td
           (click)="handleClick(1, 0)"
           [ngClass]="{
-            'player-x': board[1][0] === 'X',
-            'player-o': board[1][0] === 'O'
+            'player-x': gameService.board[1][0] === 'X',
+            'player-o': gameService.board[1][0] === 'O'
           }"
         >
-          {{ board[1][0] }}
+          {{ gameService.board[1][0] }}
         </td>
 
         <td
           (click)="handleClick(1, 1)"
           [ngClass]="{
-            'player-x': board[1][1] === 'X',
-            'player-o': board[1][1] === 'O'
+            'player-x': gameService.board[1][1] === 'X',
+            'player-o': gameService.board[1][1] === 'O'
           }"
         >
-          {{ board[1][1] }}
+          {{ gameService.board[1][1] }}
         </td>
 
         <td
           (click)="handleClick(1, 2)"
           [ngClass]="{
-            'player-x': board[1][2] === 'X',
-            'player-o': board[1][2] === 'O'
+            'player-x': gameService.board[1][2] === 'X',
+            'player-o': gameService.board[1][2] === 'O'
           }"
         >
-          {{ board[1][2] }}
+          {{ gameService.board[1][2] }}
         </td>
       </tr>
 
@@ -69,31 +69,31 @@
         <td
           (click)="handleClick(2, 0)"
           [ngClass]="{
-            'player-x': board[2][0] === 'X',
-            'player-o': board[2][0] === 'O'
+            'player-x': gameService.board[2][0] === 'X',
+            'player-o': gameService.board[2][0] === 'O'
           }"
         >
-          {{ board[2][0] }}
+          {{ gameService.board[2][0] }}
         </td>
 
         <td
           (click)="handleClick(2, 1)"
           [ngClass]="{
-            'player-x': board[2][1] === 'X',
-            'player-o': board[2][1] === 'O'
+            'player-x': gameService.board[2][1] === 'X',
+            'player-o': gameService.board[2][1] === 'O'
           }"
         >
-          {{ board[2][1] }}
+          {{ gameService.board[2][1] }}
         </td>
 
         <td
           (click)="handleClick(2, 2)"
           [ngClass]="{
-            'player-x': board[2][2] === 'X',
-            'player-o': board[2][2] === 'O'
+            'player-x': gameService.board[2][2] === 'X',
+            'player-o': gameService.board[2][2] === 'O'
           }"
         >
-          {{ board[2][2] }}
+          {{ gameService.board[2][2] }}
         </td>
       </tr>
     </tbody>
@@ -102,9 +102,16 @@
     <button type="button" (click)="resetBoard()">Reset Game</button>
   </div>
   <!-- Winner or Draw Message -->
-  <div *ngIf="winner || isDraw" class="game-over-message">
-    <h2 *ngIf="winner">Game Over! Player {{ winner }} wins!</h2>
-    <h2 *ngIf="isDraw && !winner">Game Over! It's a draw!</h2>
+  <div
+    *ngIf="gameService.winner || gameService.isDraw"
+    class="game-over-message"
+  >
+    <h2 *ngIf="gameService.winner">
+      Game Over! Player {{ gameService.winner }} wins!
+    </h2>
+    <h2 *ngIf="gameService.isDraw && !gameService.winner">
+      Game Over! It's a draw!
+    </h2>
     <button class="reset-button" (click)="resetBoard()">Reset Game</button>
   </div>
 </section>
