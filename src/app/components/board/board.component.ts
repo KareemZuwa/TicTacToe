@@ -7,7 +7,7 @@ import { AppModal } from '../modal/modal.component';
 @Component({
   selector: 'app-board',
   standalone: true,
-  imports: [CommonModule, AppButton, AppModal],
+  imports: [CommonModule, AppButton, AppModal, AppButton],
   templateUrl: './board.component.html',
   styleUrl: './board.component.css',
 })

@@ -99,7 +99,7 @@
     </tbody>
   </table>
   <div class="button-container">
-    <button type="button" (click)="resetBoard()">Reset Game</button>
+    <app-button title="Reset Game" (buttonClick)="resetBoard()"></app-button>
   </div>
   <app-modal
     [winner]="gameService.winner"
