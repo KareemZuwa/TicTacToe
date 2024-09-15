@@ -41,7 +41,7 @@ export class AppBoard {
 
   checkWinner(): boolean {
     const winningCombinations = [
-      // Rows
+      // Check Rows
       [
         [0, 0],
         [0, 1],
@@ -57,7 +57,7 @@ export class AppBoard {
         [2, 1],
         [2, 2],
       ],
-      // Columns
+      // Check Columns
       [
         [0, 0],
         [1, 0],
@@ -73,7 +73,7 @@ export class AppBoard {
         [1, 2],
         [2, 2],
       ],
-      // Diagonals
+      // Check Diagonals
       [
         [0, 0],
         [1, 1],
@@ -88,12 +88,13 @@ export class AppBoard {
 
     for (const combo of winningCombinations) {
       const [a, b, c] = combo;
+
       if (
-        this.board[a[0]][a[1]] !== '' &&
-        this.board[a[0]][a[1]] === this.board[b[0]][b[1]] &&
-        this.board[a[0]][a[1]] === this.board[c[0]][c[1]]
+        this.board[a[0]][a[1]] === this.currentPlayer &&
+        this.board[b[0]][b[1]] === this.currentPlayer &&
+        this.board[c[0]][c[1]] === this.currentPlayer
       ) {
-        this.winner = this.board[a[0]][a[1]];
+        this.winner = this.currentPlayer;
         return true;
       }
     }

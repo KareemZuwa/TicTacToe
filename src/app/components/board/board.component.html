@@ -101,4 +101,10 @@
   <div class="button-container">
     <button type="button" (click)="resetBoard()">Reset Game</button>
   </div>
+  <!-- Winner or Draw Message -->
+  <div *ngIf="winner || isDraw" class="game-over-message">
+    <h2 *ngIf="winner">Game Over! Player {{ winner }} wins!</h2>
+    <h2 *ngIf="isDraw && !winner">Game Over! It's a draw!</h2>
+    <button class="reset-button" (click)="resetBoard()">Reset Game</button>
+  </div>
 </section>
