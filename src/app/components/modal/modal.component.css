@@ -26,3 +26,9 @@
 .modal-content h1 {
   color: var(--dark-green);
 }
+
+@media (max-width: 720px) {
+  .modal-content {
+    width: 50%;
+  }
+}

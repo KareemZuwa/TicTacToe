@@ -1,8 +1,9 @@
 main {
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
   background: var(--creme-white);
   border-radius: 15px;
-  margin: auto;
+  margin: 0 auto;
   margin-top: 4rem;
   padding: 3rem;
   max-width: 768px;
@@ -10,4 +11,28 @@ main {
   justify-content: space-between;
   flex-grow: 1;
   flex-wrap: wrap;
+}
+
+@media (max-width: 900px) {
+  main {
+    margin: 4rem 2rem 0rem;
+  }
+}
+
+@media (max-width: 720px) {
+  main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 2rem;
+    padding: 2rem;
+  }
+  main > app-board {
+    order: 3;
+  }
+
+  app-board {
+    grid-column: span 2;
+    place-self: center;
+  }
 }

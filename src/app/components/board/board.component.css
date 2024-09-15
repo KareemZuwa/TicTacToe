@@ -8,6 +8,8 @@ td {
   font-size: 2em;
   cursor: pointer;
   color: var(--creme-white);
+  border-collapse: separate;
+  border-spacing: 16px;
 }
 
 td.player-o {
@@ -26,34 +28,16 @@ td.player-x {
   margin-top: 4rem;
 }
 
-button {
-  background: #268a85;
-  border-radius: 8px;
-  border-style: none;
-  box-sizing: border-box;
-  color: #ffffff;
-  cursor: pointer;
-  flex-shrink: 0;
-  font-family: "PT Mono", sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  height: 3rem;
-  padding: 0 1.6rem;
-  text-align: center;
-  text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
-  transition: all 0.5s;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
+@media (max-width: 720px) {
+  td {
+    width: 100vw;
+    height: 25vi;
+  }
 }
 
-button:hover {
-  box-shadow: var(--light-green) 0 1px 30px;
-  transition-duration: 0.1s;
-}
-
-@media (min-width: 768px) {
-  button {
-    padding: 0 2.6rem;
+@media (max-width: 475px) {
+  td {
+    width: 100vw;
+    height: 25vi;
   }
 }
