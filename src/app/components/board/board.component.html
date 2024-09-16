@@ -1,99 +1,16 @@
 <section>
   <table [cellSpacing]="4">
     <tbody>
-      <tr>
+      <tr *ngFor="let row of gameService.board; let rowIndex = index">
         <td
-          (click)="handleClick(0, 0)"
+          *ngFor="let cell of row; let colIndex = index"
+          (click)="handleClick(rowIndex, colIndex)"
           [ngClass]="{
-            'player-x': gameService.board[0][0] === 'X',
-            'player-o': gameService.board[0][0] === 'O'
+            'player-x': cell === 'X',
+            'player-o': cell === 'O'
           }"
         >
-          {{ gameService.board[0][0] }}
-        </td>
-
-        <td
-          (click)="handleClick(0, 1)"
-          [ngClass]="{
-            'player-x': gameService.board[0][1] === 'X',
-            'player-o': gameService.board[0][1] === 'O'
-          }"
-        >
-          {{ gameService.board[0][1] }}
-        </td>
-
-        <td
-          (click)="handleClick(0, 2)"
-          [ngClass]="{
-            'player-x': gameService.board[0][2] === 'X',
-            'player-o': gameService.board[0][2] === 'O'
-          }"
-        >
-          {{ gameService.board[0][2] }}
-        </td>
-      </tr>
-
-      <tr>
-        <td
-          (click)="handleClick(1, 0)"
-          [ngClass]="{
-            'player-x': gameService.board[1][0] === 'X',
-            'player-o': gameService.board[1][0] === 'O'
-          }"
-        >
-          {{ gameService.board[1][0] }}
-        </td>
-
-        <td
-          (click)="handleClick(1, 1)"
-          [ngClass]="{
-            'player-x': gameService.board[1][1] === 'X',
-            'player-o': gameService.board[1][1] === 'O'
-          }"
-        >
-          {{ gameService.board[1][1] }}
-        </td>
-
-        <td
-          (click)="handleClick(1, 2)"
-          [ngClass]="{
-            'player-x': gameService.board[1][2] === 'X',
-            'player-o': gameService.board[1][2] === 'O'
-          }"
-        >
-          {{ gameService.board[1][2] }}
-        </td>
-      </tr>
-
-      <tr>
-        <td
-          (click)="handleClick(2, 0)"
-          [ngClass]="{
-            'player-x': gameService.board[2][0] === 'X',
-            'player-o': gameService.board[2][0] === 'O'
-          }"
-        >
-          {{ gameService.board[2][0] }}
-        </td>
-
-        <td
-          (click)="handleClick(2, 1)"
-          [ngClass]="{
-            'player-x': gameService.board[2][1] === 'X',
-            'player-o': gameService.board[2][1] === 'O'
-          }"
-        >
-          {{ gameService.board[2][1] }}
-        </td>
-
-        <td
-          (click)="handleClick(2, 2)"
-          [ngClass]="{
-            'player-x': gameService.board[2][2] === 'X',
-            'player-o': gameService.board[2][2] === 'O'
-          }"
-        >
-          {{ gameService.board[2][2] }}
+          {{ cell }}
         </td>
       </tr>
     </tbody>
