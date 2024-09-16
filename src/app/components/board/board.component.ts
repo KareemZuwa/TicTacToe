@@ -17,21 +17,15 @@ export class AppBoard {
   handleClick(row: number, col: number): void {
     if (this.gameService.board[row][col] === '' && !this.gameService.winner) {
       this.gameService.board[row][col] = this.gameService.currentPlayer;
-      console.log(
-        `Player ${this.gameService.currentPlayer} clicked on cell [${row}, ${col}]`
-      );
 
       if (this.gameService.checkWinner()) {
-        console.log(`Player ${this.gameService.winner} wins!`);
       } else if (this.gameService.checkDraw()) {
         this.gameService.isDraw = true;
-        console.log('The game is a draw!');
       } else {
         this.gameService.currentPlayer =
           this.gameService.currentPlayer === 'X' ? 'O' : 'X';
       }
     }
-    console.table(this.gameService.board);
   }
 
   resetBoard(): void {
