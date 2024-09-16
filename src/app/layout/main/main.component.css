@@ -36,3 +36,9 @@ main {
     place-self: center;
   }
 }
+
+@media (max-width: 640px) {
+  main {
+    margin-top: 2rem;
+  }
+}

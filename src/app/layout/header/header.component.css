@@ -10,3 +10,12 @@ h1 {
   margin-block-start: 0;
   margin-block-end: 0;
 }
+
+@media (max-width: 640px) {
+  header {
+    height: 96px;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+}
