@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './footer.component.css',
 })
 export class AppFooter {
-  copyWriteTitle = 'Copyright ©2024 Kazu';
+  copyWriteTitle: string = 'Copyright ©2024 Kazu';
 }

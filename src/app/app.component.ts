@@ -12,5 +12,5 @@ import { AppFooter } from './layout/footer/footer.component';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  title = 'TicTacToe';
+  title: string = 'TicTacToe';
 }

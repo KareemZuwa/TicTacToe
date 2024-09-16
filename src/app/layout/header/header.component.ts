@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.css',
 })
 export class AppHeader {
-  title = "Tic-Tac-Toe"
+  title: string = 'Tic-Tac-Toe';
 }
