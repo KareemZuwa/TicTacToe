@@ -14,5 +14,4 @@ export class AppPlayer {
   @Input() player: string = '';
   @Input() backgroundColor: string = '#ECAF4F';
   @Input() icon: string = 'circle';
-  @Input() isCurrentPlayer: boolean = false;
 }
